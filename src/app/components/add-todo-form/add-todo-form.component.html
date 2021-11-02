@@ -1,0 +1,24 @@
+<form [formGroup]="todoData" (ngSubmit)="handleTodoForm()">
+    <div *ngIf="isSubmitted && (todo?.errors?.required || todo?.errors?.minlength)">
+
+        <span *ngIf="isSubmitted && todo?.errors?.required">todo task tidak boleh kosong.</span>
+        <span *ngIf="isSubmitted && todo?.errors?.minlength">Minimal karakter 
+            {{todo?.errors?.minlength?.requiredLength}}</span>
+    </div>
+    <div class="input-group mb-3">
+        <input (change)="handleIsSubmittedState()"
+            type="text"
+            name="inputTodo"
+            placeholder="Enter todo..."
+            class="form-control"
+            [(ngModel)]="inputTodo"
+            formControlName="todo"
+        />
+        <input
+            type="submit"
+            value="Add Todo"
+            class="btn btn-primary"
+            
+        />
+    </div>
+</form>
