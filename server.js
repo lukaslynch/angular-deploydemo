@@ -27,3 +27,5 @@ app.get('/*', (req, res) => res.sendFile('index.html', {root: './dist/todo'}))
 app.listen(port, () => {
     console.log(`My Angular application is now running! http://localhost:${port}`)
 })
+
+// LUKAS
