@@ -19,10 +19,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080
 
-app.use(requireHTTPS) // di comment kalo mau tes di lokal
-app.use(express.static('./dist/todo'))
+//app.use(requireHTTPS) // di comment kalo mau tes di lokal
+app.use(express.static('./dist/Todo'))
 
-app.get('/*', (req, res) => res.sendFile('index.html', {root: './dist/todo'}))
+app.get('/*', (req, res) => res.sendFile('index.html', {root: './dist/Todo'}))
 
 app.listen(port, () => {
     console.log(`My Angular application is now running! http://localhost:${port}`)
